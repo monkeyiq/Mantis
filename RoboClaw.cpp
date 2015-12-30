@@ -1,3 +1,29 @@
+/******************************************************************************
+*******************************************************************************
+*******************************************************************************
+
+    Copyright (C) 2015 Ben Martin
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+    For more details see the COPYING file in the root directory of this
+    distribution.
+
+*******************************************************************************
+*******************************************************************************
+******************************************************************************/
+
 #include <boost/asio.hpp>
 #include <boost/asio/serial_port.hpp> 
 #include <boost/bind.hpp>
@@ -98,7 +124,14 @@ RoboClaw::setMotorDuty( float a, float b, float deadzone )
 }
 
 ///////////
-    
+
+/**
+ * This is based on the crc function from
+ * the Arduino Library and Examples released by ION Motion Control.
+ * The RoboClaw.cpp file from Arduino Library and Examples did not include
+ * any specific license information.
+ * http://ionmc.com/RoboClaw-2x45A-Motor-Controller_p_26.html
+ */
 uint16_t
 RoboClaw::crc_update( uint16_t crc, uint8_t data)
 {
