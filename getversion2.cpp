@@ -21,8 +21,8 @@ int main( int argc, char** argv )
         serialDev = argv[1];
     }
     cerr << "serialDevice: " << serialDev << endl;
+    
     boost::asio::io_service io;
-
     RoboClaw rc( io, serialDev );
 
     for( int i=0; i<10; i++ ) 

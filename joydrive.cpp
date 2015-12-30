@@ -122,13 +122,13 @@ int main( int argc, char** argv )
             if( adjustAcceleration && directSpeed )
             {
                 float v = ev_forwardback.value;
-                v /= 32768.0;
+                v /= 32767.0;
                 v *= -1;
                 mvwprintw( w,1,1,"FWD/BACK   %f   %d", v, iter );
                 mm.adjustSpeed( incrSpeed * v );
 
                 v = ev_leftright.value;
-                v /= 32768.0;
+                v /= 32767.0;
                 v *= 1.0;
                 mvwprintw( w,1,1,"LEFT/RIGHT %f ", v );
                 mm.setHeading( v );
@@ -136,27 +136,27 @@ int main( int argc, char** argv )
             else if( adjustAcceleration )
             {
                 float v = ev_forwardback.value;
-                v /= 32768.0;
+                v /= 32767.0;
                 v *= -1;
                 mvwprintw( w,1,1,"FWD/BACK   %f   %d", v, iter );
                 mm.adjustSpeed( incrSpeed * v );
                 
                 v = ev_leftright.value;
-                v /= 32768.0;
+                v /= 32767.0;
                 mvwprintw( w,1,1,"LEFT/RIGHT %f ", v );
                 mm.adjustHeading( incrHeading * v );
             }
             else
             {
                 float v = ev_forwardback.value;
-                v /= 32768.0;
+                v /= 32767.0;
                 v *= -1.0;
                 v *= 100.0;
                 mvwprintw( w,1,1,"FWD/BACK   %f   %d", v, iter );
                 mm.setSpeed( v );
                 
                 v = ev_leftright.value;
-                v /= 32768.0;
+                v /= 32767.0;
                 v *= 1.0;
                 mvwprintw( w,1,1,"LEFT/RIGHT %f ", v );
                 mm.setHeading( v );
