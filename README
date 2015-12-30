@@ -1,0 +1,4 @@
+Control a ServoCity Mantis robot kit from a Linux machine through a
+RoboClaw motor controller.
+
+Fairly low level, uses boost::asio to talk to a local USB port.
